@@ -34,6 +34,11 @@ class InheritedCartWidget extends InheritedWidget {
   // true, false, true --> 재빌드, false - 스탑
   @override
   bool updateShouldNotify(covariant InheritedCartWidget oldWidget) {
-    return cartList != oldWidget.cartList;
+    print("호출 시점 확인");
+    print("올드위젯 : ${oldWidget.hashCode}");
+    print("새롭게 빌드 된 위젯 : ${cartList.hashCode}");
+    print("현재 갯수 :  ${cartList.length} / ${oldWidget.cartList.length}") ;
+    // return cartList != oldWidget.cartList;
+    return true;
   }
 }
